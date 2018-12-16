@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content pading>
+  
+      <ion-item>
+       
+          <ion-input type="email" [(ngModel)]="email" name="email" placeholder="email" ></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          
+          <ion-input type="password" [(ngModel)]="password" name="password" placeholder="mot de pass" ></ion-input>
+        </ion-item>
+  
+        <button ion-button full (click)="signUp()">sign up</button>
+        <button ion-button block (click)="signIn()">sign in</button>
+
+       
+
+</ion-content>

@@ -6,20 +6,41 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
+
+// firebase config
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+
+
+const firebaseAuth ={
+    apiKey: "AIzaSyDuP2aiZSGHfRrdUeccXEHbSIcn744bZAk",
+    authDomain: "ledionic-4182d.firebaseapp.com",
+    databaseURL: "https://ledionic-4182d.firebaseio.com",
+    projectId: "ledionic-4182d",
+    storageBucket: "ledionic-4182d.appspot.com",
+    messagingSenderId: "119491845382"
+  };
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseAuth),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    LoginPage
   ],
   providers: [
     StatusBar,
